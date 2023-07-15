@@ -14,10 +14,10 @@ public interface BookService {
 
     public void createNewBook(BookCreateRequestDTO dto);
 
-    public BookDetailResponseDTO findBookDetail(String bookId);
+    public BookDetailResponseDTO findBookDetail(Long bookId);
 
-    public void updateBook(BookUpdateRequestDTO dto, String bookId);
+    public void updateBook(BookUpdateRequestDTO dto, Long bookId);
 
-    public void deleteBook(String bookId);
+    public void deleteBook(Long bookId);
 
 }

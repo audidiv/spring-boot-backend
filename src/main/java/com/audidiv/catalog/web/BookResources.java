@@ -27,7 +27,7 @@ public class BookResources {
     private BookService bookService;
 
     @GetMapping("/book/{bookId}")
-    public ResponseEntity<BookDetailResponseDTO> findBookDetail(@PathVariable("bookId") String bookId){
+    public ResponseEntity<BookDetailResponseDTO> findBookDetail(@PathVariable("bookId") Long bookId){
         BookDetailResponseDTO dto = bookService.findBookDetail(bookId);
         return ResponseEntity.ok(dto);
     }
@@ -45,13 +45,13 @@ public class BookResources {
     }
 
     @PutMapping("/book/{bookId}")
-    public ResponseEntity<Void> updateABook(@PathVariable("bookId") String bookId, @RequestBody BookUpdateRequestDTO dto) throws URISyntaxException{
+    public ResponseEntity<Void> updateABook(@PathVariable("bookId") Long bookId, @RequestBody BookUpdateRequestDTO dto) throws URISyntaxException{
         bookService.updateBook(dto, bookId);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("book/{bookId}")
-    public ResponseEntity<Void> deleteABook(@PathVariable("bookId") String bookId){
+    public ResponseEntity<Void> deleteABook(@PathVariable("bookId") Long bookId){
         bookService.deleteBook(bookId);
         return ResponseEntity.ok().build();
     }
